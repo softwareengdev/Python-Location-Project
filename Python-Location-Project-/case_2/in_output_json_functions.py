@@ -6,19 +6,14 @@ import csv
 from csv import reader
 import string
 
-
-def Convert_Csv_List_to_Json(listArray):
+# Convert Dictionary to Json String and print
+def Convert_Dictionary_to_Json(listArray):
     
     jsonString = json.dumps(listArray, indent=4)
-
     print(jsonString)
 
-    # j = json.loads(jsonString)
-    
-    # for item in j.items():
-    #     print(item)
 
-# Open_with_read_file function to read file 
+# Open_with_read_file_and_json_output function to read file and json Output 
 def Open_with_read_file_and_json_output(path):
     
     try:
@@ -36,7 +31,7 @@ def Open_with_read_file_and_json_output(path):
                 
                 listArray.append(i)
                 
-            Convert_Csv_List_to_Json(listArray)
+            Convert_Dictionary_to_Json(listArray)
 
             print(' ')
             print(' - [ STEP COMPLETED ] - File Read Completed! ')
