@@ -1,15 +1,16 @@
-# import tkinter as tk
-# from tkinter import filedialog
+# README 
+#   This is a PYTHON PROJECT THAT I MADE WITH 7 CASES.
+#   You can see as this Project full as id done 
+#   Thanks!
+#   
+#   On Commits is each STEP on project .
+#   
+#   # - STEP 1 - CASE 1 - READ CSV FILE AND SHOW IT CONTENT
+#    
 
-# root = tk.Tk()
-# root.withdraw()
 
-# file_path = filedialog.askopenfilename()
-
-# from keyboard import keyboard, on_press, on_press_key
-# from pynput.keyboard import Key, Listener
-
-from main_read_file import Read_file_case_
+from case_1.main_read_file import Read_file_case_
+from case_2.main_read_file_in_output_json import Read_file_case_json_Output_
 import asyncio
 
 async def Start_program():
@@ -37,6 +38,9 @@ asyncio.run(Start_program())
 
 # CASE 1
 asyncio.run(Read_file_case_.Main_case_1())
+
+# CASE 2
+asyncio.run(Read_file_case_json_Output_.Main_case_2())
 
 # END PROGRAM 
 asyncio.run(End_program())

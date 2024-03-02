@@ -1,35 +1,44 @@
 
+# CASE 2 in output JSON object each file row.
 
-# CASE 1 read file functions
-
-
+import json
+import csv
 from csv import reader
+import string
 
-# Is_Key function to renew read file STEP
-def is_key(Y):
-    renew = input(' - [ KEY_2 ] - Do you want to read a new file? Press KEY - Yes [ Y ] - : ')
-    if renew == 'y' or renew == 'Y':
-        Y = True
-    else:
-        Y = False
-    return Y
-        
+
+def Convert_Csv_List_to_Json(listArray):
+    
+    jsonString = json.dumps(listArray, indent=4)
+
+    print(jsonString)
+
+    # j = json.loads(jsonString)
+    
+    # for item in j.items():
+    #     print(item)
 
 # Open_with_read_file function to read file 
-def Open_with_read_file(path):
+def Open_with_read_file_and_json_output(path):
     
     try:
         
+        listArray = []
+
         with open(path, "r") as my_csv_f:
         
             print(' - [ UPCOMING STEP ] - Reading input file...')
             print(' ')
             print(' ')
         
-            file = reader(my_csv_f)
+            file = csv.DictReader(my_csv_f)
             for i in file:
-                print(i)
-                print(' ')
+                
+                listArray.append(i)
+                
+            Convert_Csv_List_to_Json(listArray)
+
+            print(' ')
             print(' - [ STEP COMPLETED ] - File Read Completed! ')
             print(' ')
             print(' ')

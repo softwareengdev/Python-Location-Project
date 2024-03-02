@@ -23,9 +23,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="bg_colors.py" />
+    <Compile Include="case_2\in_output_json_functions.py" />
+    <Compile Include="case_2\main_read_file_in_output_json.py" />
+    <Compile Include="common\common_functions.py" />
     <Compile Include="Python_Location_Project_.py" />
-    <Compile Include="main_read_file.py" />
-    <Compile Include="read_file_functions.py" />
+    <Compile Include="case_1\main_read_file.py" />
+    <Compile Include="case_1\read_file_functions.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -37,6 +40,11 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="case_1\" />
+    <Folder Include="case_2\" />
+    <Folder Include="common\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

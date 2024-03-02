@@ -4,7 +4,8 @@
 
 
 from bg_colors import bg_colors
-from read_file_functions import is_key, Open_with_read_file
+from common.common_functions import Common_functions
+from case_1.read_file_functions import Open_with_read_file
 
 class Read_file_case_:
 
@@ -28,7 +29,7 @@ class Read_file_case_:
             print(' ')
 
             Open_with_read_file(x)
-            Y = is_key(Y)
+            Y = Common_functions.is_key(Y)
     
             if Y == False:
                 break
