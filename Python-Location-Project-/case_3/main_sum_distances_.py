@@ -1,24 +1,27 @@
 
 
-# ########## Read File with JSON output Case 2 #############
-#  This file attempts to read existing file from C:/ Unit location and show his content as on CASE 1, on Json object each row file. 
+
+#
 
 
+
+# ########## Read File with su of distances of each MATRICULA property output Case 3 #############
+#  This file attempts to read existing file from C:/ Unit location and show his content as on CASE 1 and CASE 2, on Json object. 
 
 
 from bg_colors import bg_colors
 from common.common_functions import Common_functions
-from case_2.in_output_json_functions import Open_with_read_file_and_json_output
+from case_3.sum_distances_functions import Open_with_sum_of_distances_output
 
-class Read_file_case_json_Output_:
+class Read_file_case_sum_distances_:
 
 
-    # Main while when STEP is not completed 
+    # Main while when STEP is not completed or not Start. 
     
-    async def Main_case_2():
+    async def Main_case_3():
         
         print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
-        print('////////////////////////////////////////////////////////////////////////////// CASE 2 //////////////////////////////////////////////////////////////////////')
+        print('////////////////////////////////////////////////////////////////////////////// CASE 3 //////////////////////////////////////////////////////////////////////')
         print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
         print(' ')
         print(' ')
@@ -26,23 +29,20 @@ class Read_file_case_json_Output_:
         Y = False
         while True:
     
-            C = 'C:/'
-            x = C + input(' - [ KEY_1 ] - Enter a file name: ')
-            print(' ')
-            print(' ')
+            C = 'C:/reto.csv'
 
-            Open_with_read_file_and_json_output(x)
-            Y = Common_functions.is_key(Y)
-    
+            Y = Common_functions.is_key_Start(Y)
             if Y == False:
                 break
+            
+            Open_with_sum_of_distances_output(C)
 
            
-        # END STEP read file with Json output END CASE 2
+        # END STEP read file with sum of distances output END CASE 3
         print(' ')
         print(' ')
         print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
-        print('////////////////////////////////////////////////////////////////////////////// END CASE 2 //////////////////////////////////////////////////////////////////')
+        print('////////////////////////////////////////////////////////////////////////////// END CASE 3 //////////////////////////////////////////////////////////////////')
         print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
         print(' ')
         print(' ')

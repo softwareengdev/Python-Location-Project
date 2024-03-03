@@ -2,6 +2,7 @@
 
 # Common functions on the project cases .
 
+import json
 
 class Common_functions:
 
@@ -15,4 +16,14 @@ class Common_functions:
         return Y
         
 
+    #   -----------------------------------------------------------------------------------------------------
+        # Is_Key function to renew read file STEP
+    def is_key_Start(Y):
+        renew = input(' - [ KEY_START ] - Do you want to start sum os distance on RETO.csv file? Press Key - Yes [ Enter ] - : ')
+        if renew == '':
+            Y = True
+        else:
+            Y = False
+        return Y
+        
     #   -----------------------------------------------------------------------------------------------------
