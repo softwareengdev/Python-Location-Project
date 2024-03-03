@@ -18,8 +18,8 @@ class Common_functions:
 
     #   -----------------------------------------------------------------------------------------------------
         # Is_Key function to renew read file STEP
-    def is_key_Start(Y):
-        renew = input(' - [ KEY_START ] - Do you want to start sum os distance on RETO.csv file? Press Key - Yes [ Enter ] - : ')
+    def is_key_Start(Y, S):
+        renew = input(S)
         if renew == '':
             Y = True
         else:

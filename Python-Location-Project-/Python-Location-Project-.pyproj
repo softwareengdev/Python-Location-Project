@@ -27,6 +27,8 @@
     <Compile Include="case_2\main_read_file_in_output_json.py" />
     <Compile Include="case_3\main_sum_distances_.py" />
     <Compile Include="case_3\sum_distances_functions.py" />
+    <Compile Include="case_4\main_sum_cordinates_.py" />
+    <Compile Include="case_4\sum_cordinates_functions.py" />
     <Compile Include="common\common_functions.py" />
     <Compile Include="Python_Location_Project_.py" />
     <Compile Include="case_1\main_read_file.py" />
@@ -48,6 +50,7 @@
     <Folder Include="case_2\" />
     <Folder Include="common\" />
     <Folder Include="case_3\" />
+    <Folder Include="case_4\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

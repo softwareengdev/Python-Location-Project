@@ -14,6 +14,7 @@
 from case_1.main_read_file import Read_file_case_
 from case_2.main_read_file_in_output_json import Read_file_case_json_Output_
 from case_3.main_sum_distances_ import Read_file_case_sum_distances_
+from case_4.main_sum_cordinates_ import Read_file_case_sum_distances_of_cordinates_
 import asyncio
 
 async def Start_program():
@@ -47,6 +48,9 @@ asyncio.run(Read_file_case_json_Output_.Main_case_2())
 
 # CASE 3
 asyncio.run(Read_file_case_sum_distances_.Main_case_3())
+
+# CASE 4
+asyncio.run(Read_file_case_sum_distances_of_cordinates_.Main_case_4())
 
 # END PROGRAM 
 asyncio.run(End_program())
