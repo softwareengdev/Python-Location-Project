@@ -1,0 +1,49 @@
+
+
+
+#
+
+
+
+# ########## Write File with max time position of each MATRICULA property on format yyy/mm/dd HH:MM:SS output Case 5 #############
+#  This file attempts to read existing file from C:/ Unit location and write file with max position time for each Matricula. 
+
+
+from bg_colors import bg_colors
+from common.common_functions import Common_functions
+from case_5.max_time_position_functions import Open_with_max_position_time_
+
+class Write_file_with_max_time_position_:
+
+
+    # Main while when STEP is not completed or not Start. 
+    
+    async def Main_case_5():
+        
+        print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
+        print('////////////////////////////////////////////////////////////////////////////// CASE 5 //////////////////////////////////////////////////////////////////////')
+        print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
+        print(' ')
+        print(' ')
+    
+        Y = False
+        while True:
+    
+            C = 'C:/reto.csv'
+            S = ' - [ KEY_START ] - Do you want to start to write new file with max time position in each [Matricula] on reto.csv file? Press Key - Yes [ Enter ] - : '
+            
+            Y = Common_functions.is_key_Start(Y, S)
+            if Y == False:
+                break
+            
+            Open_with_max_position_time_(C)
+
+           
+        # END STEP read file with max position time output END CASE 5
+        print(' ')
+        print(' ')
+        print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
+        print('////////////////////////////////////////////////////////////////////////////// END CASE 5 //////////////////////////////////////////////////////////////////')
+        print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
+        print(' ')
+        print(' ')

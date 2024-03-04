@@ -1,5 +1,5 @@
 
-# CASE 3 sum distance on same MATRICULA property in output JSON object each.
+# CASE 4 sum distance on same MATRICULA property of each CORDINATES latitud longitud JSON object.
 
 import json
 import csv
@@ -9,7 +9,7 @@ from asyncio.windows_events import NULL
 from vincenty import vincenty
 from common.common_functions import Common_functions
 
-# Open_with_sum_of_distances_output function to read file and json sum distance outup from each row ['Matricula'] 
+# Open_with_sum_distances_of_cordinates_output function to read file and json sum distance of points cordinates from each same row ['Matricula'] 
 def Open_with_sum_distances_of_cordinates_output(path):
     
     try:
@@ -51,12 +51,14 @@ def Open_with_sum_distances_of_cordinates_output(path):
                         c = (lat,lon)
                         
                         if not sum_cordinates == 0:
+                            
+                            # Vincenty function to sum distances from two cordinates points 
                             distance = distance + vincenty(sum_cordinates, c)
                             sum_cordinates = c
                         else:
                             sum_cordinates = c    
 
-                print(' -- [ MATRICULA  :  ', v ,' ] -- [ SUM of CORDINATES  :  ', distance, ' Km ] --')
+                print(' -- [ MATRICULA  :  ', v ,' ] -- [ SUM of CORDINATES  :  ', distance, ' ] --')
                 print('-----------------------------------------------------------------------------------------------------------------------------------------------------')
                 sum_cordinates = 0
                 distance = 0
