@@ -48,11 +48,9 @@ def Write_with_max_position_time_file(max_times_f):
     for line in max_times_f:
         
         v = vars(line)
-        my_new_f.write(', '.join(f"{key}: {value}" for key, value in v.items()))
+        my_new_f.write(', '.join(f"\"{key}\": \"{value}\"" for key, value in v.items()))
         my_new_f.write('\n')
         
-    my_new_f.write('    ------------------- END FILE WITH MAX TIMES POSITIONS -------------------\n')
-    my_new_f.write(' ------------------- ------------------- -------------------  -------------------\n')
     my_new_f.close()
     
 # Write_with_max_position_time_ function to read file and write file max time position from each same row ['Matricula'] 

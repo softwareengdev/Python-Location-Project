@@ -10,6 +10,7 @@
 #   # - STEP 3 - CASE 3 - READ CSV FILE ON JSON FORMAT AND SHOW SUMMING OF DISTANCES ON EACH MATRICULA
 #   # - STEP 4 - CASE 4 - READ CSV FILE AND SHOW SUM OF DISTANCES ON EACH MATRICULA
 #   # - STEP 5 - CASE 5 - WRITE NEW TXT FILE WITH MAX TIME ON EACH MATRICULA
+#   # - STEP 6 - CASE 6 - START SERVER ON LOCALHOST:8080 AND RETURN FROM FILE MAX TIME FOR EACH MATRICULA
 #    
 
 
@@ -18,6 +19,7 @@ from case_2.main_read_file_in_output_json import Read_file_case_json_Output_
 from case_3.main_sum_distances_ import Read_file_case_sum_distances_
 from case_4.main_sum_cordinates_ import Read_file_case_sum_distances_of_cordinates_
 from case_5.main_max_time_position_ import Write_file_with_max_time_position_
+from case_6.main_API_REST_ import API_REST_Get_max_time_
 
 import asyncio
 
@@ -58,6 +60,12 @@ asyncio.run(Read_file_case_sum_distances_of_cordinates_.Main_case_4())
 
 # CASE 5
 asyncio.run(Write_file_with_max_time_position_.Main_case_5())
+
+# CASE 6
+try:
+    asyncio.run(API_REST_Get_max_time_.Main_case_6())
+except:
+    pass
 
 # END PROGRAM 
 asyncio.run(End_program())
