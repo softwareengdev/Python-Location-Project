@@ -1,0 +1,5 @@
+Docker support in Visual Studio :
+
+Docker support is available for ASP.NET projects, ASP.NET Core projects, and .NET Core and .NET Framework console projects.
+
+For this reason this step cannot be done yet because Visual Studio developmend IDE tool with Python Project type in this moment.
