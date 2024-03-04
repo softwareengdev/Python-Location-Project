@@ -20,6 +20,7 @@ from case_3.main_sum_distances_ import Read_file_case_sum_distances_
 from case_4.main_sum_cordinates_ import Read_file_case_sum_distances_of_cordinates_
 from case_5.main_max_time_position_ import Write_file_with_max_time_position_
 from case_6.main_API_REST_ import API_REST_Get_max_time_
+from case_8.main_API_REST_database import API_REST_database_Get_max_time_
 
 import asyncio
 
@@ -64,6 +65,15 @@ asyncio.run(Write_file_with_max_time_position_.Main_case_5())
 # CASE 6
 try:
     asyncio.run(API_REST_Get_max_time_.Main_case_6())
+except:
+    pass
+
+# CASE 7
+#asyncio.run(.Main_case_7())
+
+# CASE 6
+try:
+    asyncio.run(API_REST_database_Get_max_time_.Main_case_8())
 except:
     pass
 
