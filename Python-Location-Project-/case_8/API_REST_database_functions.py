@@ -1,54 +1,43 @@
 
-# CASE 6 max time position on MATRICULA property from GET API_REST.
+# CASE 8 max time position on MATRICULA property from GET API_REST_ FROM DATABASE.
 
 from math import e
 import os
 import csv
 import json
 import pyodbc
+import pymssql
 from csv import reader
 from datetime import datetime
 from common.common_functions import Common_functions
 
 
-# GET_Max_time_from_matricula function to read database and return max time position from ['Matricula'] on max_times.txt
+# GET_Max_time_from_matricula_from_database function to read database and return max time position from ['Matricula'] on max_time.
 def GET_Max_time_from_matricula_from_database(v):
     
     try:
         
-        my_lines = []
         max_time = ''        
         
         print(' - [ UPCOMING STEP ] - Connecting Database ...')
         print(' ')
         print(' ')
 
-        server_name = '(localdb)\MSSQLLocalDB'
-        db_name = 'PYTHON_PROJECT'
+        connection = pyodbc.connect(f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER=(localdb)\MSSQLLocalDB;DATABASE=PYTHON_PROJECT;UID=;PWD=')
+        cursor = connection.cursor()
+
+        sql_string = 'SELECT [Matricula] ,[Max_date] FROM [dbo].[MAX_TIMES] WHERE [Matricula] = \'' + str(v) + '\''
+
+        # Execute a SELECT query
+        cursor.execute(sql_string)
+            
         
-        SERVER = '(localdb)\MSSQLLocalDB'
-        DATABASE = 'PYTHON_PROJECT'
-        USERNAME = '<username>'
-        PASSWORD = '<password>'
-
-
-        conn = pymssql.connect(server, user, password, "tempdb")
-        cursor = conn.cursor(as_dict=True)
-
-        cursor.execute('SELECT * FROM [MAX_TIMES] WHERE [MAX_TIMES].[Matricula] = ' + str(v))
-        for row in cursor:
-            print("ID=%d, Name=%s" % (row['id'], row['name']))
-
-        conn.close()
-
-        # Example: Execute a SELECT query
-        cursor.execute('SELECT * FROM [MAX_TIMES] WHERE [MAX_TIMES].[Matricula] = ' + str(v))
-
         # Fetch and print the results
-        for r in cursor:
-                 
-            if r['Matricula'] == v:
-                max_time = r['Max_date']
+        for row in cursor:
+            print('GET RECORD FROM DATABASE OK: ', str(row[0]), str(row[1]))
+
+            if row[0] == v:
+                max_time = row[1]
 
             print(' ')
             print(' ')
@@ -58,10 +47,12 @@ def GET_Max_time_from_matricula_from_database(v):
             print('-----------------------------------------------------------------------------------------------------------------------------------------------------')
             print('-----------------------------------------------------------------------------------------------------------------------------------------------------')
             
-            return max_time
+        connection.close()
+        return max_time
+    
     except Exception as e:
         
-        print(e.message)
+        print(e.message())
         print(' ')
         print('##########################################################################################################################################################')
         print('#######################################################################. No such a file found! .##########################################################')

@@ -5,8 +5,8 @@
 
 
 
-# ########## API_REST GET with Matricula parameter to show max time position property on format yyy/mm/dd HH:MM:SS output from DATBASE Case 6 #############
-#  This file attempts to read existing file from Project Unit location and return on GET max position time for each Matricula in API_REST from DATABASE. 
+# ########## API_REST GET with Matricula parameter to show max time position property on format yyy/mm/dd HH:MM:SS output from DATBASE Case 8 #############
+#  This file attempts to read existing database Unit location and return on GET max time position for each Matricula in API_REST from DATABASE. 
 
 
 from bg_colors import bg_colors
@@ -32,7 +32,7 @@ class MyRequestHandler(BaseHTTPRequestHandler):
         resp = ''
         if url.path == '/':
             
-            resp = f"<html><body><h1> Do GET Http Request with localhost:8080/'Matricula' . WHERE ' Matricula is number to identify Max_time' </h1></body></html>"
+            resp = f"<html><body><h1> Do GET Http Request with localhost:8088/'Matricula' . WHERE ' Matricula is number to identify Max_time' </h1></body></html>"
         elif not url.path == '/favicon.ico':
             
             v = url.path[1:]
@@ -75,7 +75,7 @@ class API_REST_database_Get_max_time_:
                     server_address = ('localhost', 8088)
                     httpd = HTTPServer(server_address, MyRequestHandler)
             
-                    print('Server is running on http://localhost:8080/ ...')
+                    print('Server is running on http://localhost:8088/ ...')
                     httpd.serve_forever()
             
                 except KeyboardInterrupt:
@@ -85,7 +85,7 @@ class API_REST_database_Get_max_time_:
                     pass
 
 
-        # END STEP read file with max position time output END CASE 6
+        # END STEP read database with max position time output END CASE 8
         print(' ')
         print(' ')
         print('////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
