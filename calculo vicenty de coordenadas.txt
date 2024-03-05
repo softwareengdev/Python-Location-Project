@@ -1,1 +1,0 @@
-Para calcular la distancia geográfica entre dos puntos con extrema precisión en Python, puedes utilizar la fórmula de Vincenty. Esta fórmula resuelve el problema geodésico inverso y se basa en el elipsoide de referencia WGS 84. Es mucho más preciso que los métodos que asumen una Tierra esférica para calcular la distancia de gran círculo.
